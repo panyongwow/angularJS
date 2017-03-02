@@ -1,0 +1,21 @@
+<html>
+ <head>
+  <title>AngularJS_26</title>
+  <script src="Angular.js"></script>
+  <script src="Math.js"></script>
+ </head>
+ <body ng-app="myApp" ng-controller="ctr">
+   {{result}}
+ </body>
+ <script>
+    var app=angular.module("myApp",['MathService']);
+	app.controller("ctr",function($scope,myMath){
+		$scope.result=myMath.add(1,21);
+	})
+ </script>
+</html>
+
+
+
+
+

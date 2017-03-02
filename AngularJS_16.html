@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>AngularJS_16</title>
+  <script src="Angular.js"></script>
+ </head>
+
+ <body ng-app="myApp" ng-controller="person">
+	 <form ng-submit="submit()" name="myForm">
+		 <p>职业:
+		 <input type="checkbox" ng-model="user.jobs.engineer">工程师
+		 <input type="checkbox" ng-model="user.jobs.designer">设计师
+		 <input type="checkbox" ng-model="user.jobs.teacher">教师
+		 </p>
+		 <input type="submit" value="提交">
+		 <input type="button" value="选中教师" ng-click="select_teacher()">
+	</form>
+ </body>
+ <script>
+    var app=angular.module("myApp",[]);
+  	 app.controller("person",function($scope){
+		 $scope.user={jobs:{engineer:true,designer:false,teacher:false}};
+		 $scope.submit=function(){
+			 alert(JSON.stringify($scope.user));
+		 };
+		 $scope.select_teacher=function(){
+			 $scope.user.jobs.teacher=true;
+		 }
+	 });
+ </script>
+</html>
+
+

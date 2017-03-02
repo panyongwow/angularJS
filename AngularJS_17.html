@@ -1,0 +1,40 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>AngularJS_17</title>
+  <script src="Angular.js"></script>
+ </head>
+
+ <body ng-app="myApp" ng-controller="person">
+	 <form ng-submit="submit()" name="myForm">
+		 <span ng-repeat="job in user.jobs">
+		 <input type="checkbox" ng-model="job.selected" ng-true-value="'Yes'" ng-false-value="'No'">{{job.label}}
+		 </span>
+		 <br>
+		 <input type="submit" value="提交">
+		 <input type="button" value="选中教师" ng-click="select_teacher()">
+	</form>
+ </body>
+ <script>
+    var app=angular.module("myApp",[]);
+  	 app.controller("person",function($scope){
+		 $scope.user={jobs:[{label:'工程师',value:'engineer',selected:'Yes'},
+		                   {label:'设计师',value:'designer',selected:'No'},
+		                   {label:'教师',value:'teacher',selected:'No'}]};
+		 $scope.submit=function(){
+ 			 alert(angular.toJson($scope.user.jobs));
+			 //alert(JSON.stringify($scope.user.jobs));
+		 };
+		 $scope.select_teacher=function(){
+			 for(var i=0;i<$scope.user.jobs.length;i++){
+				 if($scope.user.jobs[i].value=="teacher"){
+					 $scope.user.jobs[i].selected='Yes';
+					 return false;
+				 }
+			 }
+		 }
+	 });
+ </script>
+</html>
+
+

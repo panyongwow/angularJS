@@ -1,0 +1,31 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>AngularJS_14</title>
+  <script src="Angular.js"></script>
+ </head>
+
+ <body ng-app="myApp" ng-controller="person">
+	 <form ng-submit="submit()" name="myForm"  novalidate>
+		 <p>用户名:
+		 <input type="text" name="name" ng-model="user.name" ng-minlength="4" required>
+		 <span ng-show="myForm.name.$error.required">用户名是必须的</span>
+		 <span ng-show="myForm.name.$error.minlength">用户名长度必须大于4位</span>
+		 </p>
+		 <p>邮箱:
+		 <input type="email" name="email" ng-model="user.email" required>
+		 <span ng-show="myForm.email.$error.email">非法的邮箱</span>
+		 <span ng-show="myForm.email.$error.required">邮箱是必须的</span>
+		 </p>
+		 <input type="submit" value="提交" ng-disabled="myForm.$invalid">
+	</form>
+ </body>
+ <script>
+    var app=angular.module("myApp",[]);
+  	 app.controller("person",function($scope){
+		 $scope.submit=function(){
+			 alert(JSON.stringify($scope.user));
+		 }
+	 });
+ </script>
+</html>

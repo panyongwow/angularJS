@@ -1,0 +1,27 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>AngularJS_13</title>
+  <script src="Angular.js"></script>
+ </head>
+
+ <body ng-app="myApp" ng-controller="person">
+	 <form ng-submit="submit()">
+		 <p>用户名:
+		 <input type="text" ng-model="user.name">
+		 </p>
+		 <p>邮箱:
+		 <input type="text" ng-model="user.email">
+		 </p>
+		 <input type="submit" value="提交">
+	</form>
+ </body>
+ <script>
+    var app=angular.module("myApp",[]);
+  	 app.controller("person",function($scope){
+		 $scope.submit=function(){
+			 alert(JSON.stringify($scope.user));
+		 }
+	 });
+ </script>
+</html>

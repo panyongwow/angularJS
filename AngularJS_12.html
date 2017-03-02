@@ -1,0 +1,21 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>AngularJS_12</title>
+  <script src="Angular.js"></script>
+ </head>
+
+ <body ng-app="myApp" ng-controller="person">
+	 <input type="button" value="ÏÔÊ¾/Òþ²Ø" ng-click="show_change()">
+     <p ng-show="isshow">ÕÅÈý</p>
+ </body>
+ <script>
+     var app=angular.module("myApp",[]);
+	 app.controller("person",function($scope){
+		 $scope.isshow=true;
+		 $scope.show_change=function(){
+             $scope.isshow=!$scope.isshow;
+		 };
+	 });
+ </script>
+</html>

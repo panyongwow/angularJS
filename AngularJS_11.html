@@ -1,0 +1,26 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>AngularJS_11</title>
+  <script src="Angular.js"></script>
+ </head>
+
+ <body ng-app="myApp" ng-controller="person">
+     <div>
+     姓名:{{name}} 
+	 职业:{{job}}
+     </div>
+	 <input type="button" value="更改" ng-click="change()">
+ </body>
+ <script>
+     var app=angular.module("myApp",[]);
+	 app.controller("person",function($scope){
+		 $scope.name="张三";
+		 $scope.job="软件工程师";
+		 $scope.change=function(){
+			 $scope.name="李四";
+			 $scope.job="律师";
+		 }
+	 });
+ </script>
+</html>

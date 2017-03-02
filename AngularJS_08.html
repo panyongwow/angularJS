@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>AngularJS_08</title>
+  <script src="Angular.js"></script>
+ </head>
+
+ <body ng-app="myApp">
+     <div ng-controller="person">
+         {{name}} 
+     </div>
+ </body>
+ <script>
+     var app=angular.module("myApp",[]);
+	 app.controller("person",function($scope){
+		 $scope.name="уехЩ";
+	 });
+ </script>
+</html>

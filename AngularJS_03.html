@@ -1,0 +1,22 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>AngularJS_03</title>
+  <script>
+      window.onload=function(){
+		  var cities=['上海','成都','北京','广州'];
+		  var ul=document.getElementById("ul_cities");
+		  var li;
+		  for(var i=0;i<cities.length;i++){
+			  li=document.createElement("li");
+			  li.innerHTML=cities[i];
+			  ul.appendChild(li);
+		  }
+	  }
+  </script>
+ </head>
+<body>
+    <ul id="ul_cities">
+	</ul>
+</body>
+</html>

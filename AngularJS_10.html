@@ -1,0 +1,25 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>AngularJS_10</title>
+  <script src="Angular.js"></script>
+ </head>
+
+ <body ng-app="myApp" ng-controller="person">
+     职业:{{job}}
+     <div ng-controller="person1">
+     姓名:{{name}} 
+	 职业:{{myjob}}
+     </div>
+ </body>
+ <script>
+     var app=angular.module("myApp",[]);
+	 app.controller("person",function($scope){
+		 $scope.job="软件工程师";
+	 });
+	 app.controller("person1",function($scope){
+		 $scope.name="张三";
+		 $scope.myjob=$scope.job;
+	 });
+ </script>
+</html>

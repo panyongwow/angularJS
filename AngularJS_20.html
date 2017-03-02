@@ -1,0 +1,33 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>AngularJS_20</title>
+  <script src="Angular.js"></script>
+ </head>
+
+ <body ng-app="myApp" ng-controller="person">
+	 <form ng-submit="submit()" name="myForm">
+		 <p>职业:
+		 <select ng-model="user.job">
+		     <option value="engineer">工程师</option> 
+		     <option value="designer">设计师</option> 
+		     <option value="teacher">教师</option> 
+		 </select>
+		 </p>
+		 <input type="submit" value="提交">
+		 <input type="button" value="选中教师" ng-click="select_teacher()">
+	</form>
+ </body>
+ <script>
+    var app=angular.module("myApp",[]);
+  	 app.controller("person",function($scope){
+		 $scope.user={job:'designer'};
+		 $scope.submit=function(){
+			alert(angular.toJson($scope.user));
+		 };
+		 $scope.select_teacher=function(){
+			 $scope.user.job="teacher";
+		 }
+	 });
+ </script>
+</html>

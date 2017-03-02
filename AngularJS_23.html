@@ -1,0 +1,28 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>AngularJS_23</title>
+  <script src="Angular.js"></script>
+  <script src="angular-route.min.js"></script>
+ </head>
+ <body ng-app="myApp">
+     <ul>
+         <li><a href="#/">首页</a></li>
+         <li><a href="#/news">新闻</a></li>
+         <li><a href="#/sport">体育</a></li>
+	 </ul>
+	 <div ng-view></div>
+ </body>
+ <script>
+    var app=angular.module("myApp",['ngRoute']);
+  	app.config(function($routeProvider){
+		$routeProvider
+		.when('/',{template:'这是首页'})
+		.when('/news',{template:'这是新闻页面'})
+		.when('/sport',{template:'这是体育页面'})
+		.otherwise({redirectTo:'/'});
+	});
+ </script>
+</html>
+
+

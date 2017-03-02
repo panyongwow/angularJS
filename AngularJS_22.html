@@ -1,0 +1,35 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+  <title>AngularJS_22</title>
+  <script src="Angular.js"></script>
+ </head>
+
+ <body ng-app="myApp" ng-controller="person">
+	 <form ng-submit="submit()" name="myForm">
+		 <p>职业:
+		 <select ng-model="user.job" ng-options="j.value as j.label for j in jobs">
+		 </select>
+		 </p>
+		 <input type="submit" value="提交">
+		 <input type="button" value="选中教师" ng-click="select_teacher()">
+	</form>
+ </body>
+ <script>
+    var app=angular.module("myApp",[]);
+  	 app.controller("person",function($scope){
+		 $scope.jobs=[{label:'工程师',value:'engineer'},
+		              {label:'设计师',value:'designer'},
+		              {label:'教师',value:'teacher'}];
+         $scope.user={job:'designer'};
+		 $scope.submit=function(){
+			 alert(JSON.stringify($scope.user));
+		 };
+		 $scope.select_teacher=function(){
+			 $scope.user.job="teacher";
+		 }
+	 });
+ </script>
+</html>
+
+

@@ -1,0 +1,19 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+ <head>
+    <title>AngularJS_05</title>
+    <script src="Angular.js"></script>
+ </head>
+<body ng-app ng-init="persons=[
+{name:'张三',sex:'男',age:23},
+{name:'李四',sex:'男',age:18},
+{name:'王红',sex:'女',age:24}]">
+    <table>
+	    <tr ng-repeat="person in persons">
+		    <td>{{person.name}}</td>
+ 		    <td>{{person.sex}}</td>
+		    <td>{{person.age}}</td>
+       </tr>
+	</table>
+</body>
+</html>
